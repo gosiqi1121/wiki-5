@@ -116,9 +116,12 @@ export default defineComponent({
     };
 
     // vote
+    console.log("*** doc  ", doc.value);
     const vote = () => {
+
       axios.get('/doc/vote/' + doc.value.id).then((response) => {
         const data = response.data;
+
         if (data.success) {
           doc.value.voteCount++;
         } else {
